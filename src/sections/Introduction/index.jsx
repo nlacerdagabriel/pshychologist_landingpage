@@ -1,9 +1,9 @@
 import { themeColors } from "@/theme/colors";
 import { themeFontSize } from "@/theme/fontSize";
-import { Button, Container, Flex, Heading, Text, calc } from "@chakra-ui/react";
+import {  Container, Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import { rgba } from "polished";
 import BusinessWoman from "../../../public/business-woman.png";
+import CustomButton from "@/components/CustomButton";
 
 export default function Introduction() {
   return (
@@ -40,7 +40,7 @@ export default function Introduction() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in magna
             vel purus cursus fermentum eget at.
           </Text>
-          <Button variant="dsButton">Marcar horário</Button>
+          <CustomButton>Marcar horário</CustomButton>
         </Container>
 
         <Image src={BusinessWoman} />

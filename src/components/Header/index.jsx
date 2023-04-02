@@ -1,8 +1,9 @@
 import { themeFontSize } from "@/theme/fontSize";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../public/Logo.png";
+import CustomButton from "../CustomButton";
+import Logo from "../Logo";
 
 export default function Header() {
   return (
@@ -27,7 +28,7 @@ export default function Header() {
         height="80px"
       >
         <Link href="#">
-          <Image height={65} src={Logo} alt="logotipo da Heloísa Aquino" />
+          <Logo/>
         </Link>
         <Flex gap="2rem" fontSize={themeFontSize.base}>
           <Link href="#">
@@ -50,7 +51,7 @@ export default function Header() {
           </Link>
         </Flex>
 
-        <Button variant="dsButton">Marcar horário</Button>
+        <CustomButton>Marcar horário</CustomButton>
       </Flex>
     </header>
   );

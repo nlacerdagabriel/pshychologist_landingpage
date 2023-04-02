@@ -17,17 +17,15 @@ import Input from "@/components/Input";
 import TextArea from "@/components/TextArea";
 import { themeColors } from "@/theme/colors";
 import Image from "next/image";
-import Logo from "@/../public/Logo.png";
-import {
-  CheckCircleIcon,
-  CloseIcon,
-  EmailIcon,
-  PhoneIcon,
-} from "@chakra-ui/icons";
+import { CheckCircleIcon, EmailIcon } from "@chakra-ui/icons";
 import { themeFontSize } from "@/theme/fontSize";
 import { BsWhatsapp, BsInstagram } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { openingHours } from "@/data/opening-hours";
+import CustomButton from "@/components/CustomButton";
+import SocialIcons from "@/components/SocialIcons";
+import Logo from "@/components/Logo";
+import Crp from "@/components/Crp";
 
 export default function () {
   return (
@@ -53,34 +51,9 @@ export default function () {
           justifyContent="space-between"
         >
           <Stack mr="2rem" spacing="2rem">
-            <Image height={65} src={Logo} alt="logotipo da Heloísa Aquino" />
-            <Badge
-              textAlign="center"
-              fontSize={themeFontSize.s}
-              variant="dsBadge"
-            >
-              CRP: 06/155813
-            </Badge>
-            <Stack justifyContent="space-between" direction="row">
-              <IconButton
-                colorScheme="dsColorScheme"
-                variant="outline"
-                aria-label="Send email"
-                icon={<EmailIcon />}
-              />
-              <IconButton
-                colorScheme="dsColorScheme"
-                variant="outline"
-                aria-label="Send whatsapp"
-                icon={<BsWhatsapp />}
-              />
-              <IconButton
-                colorScheme="dsColorScheme"
-                variant="outline"
-                aria-label="See instagram"
-                icon={<BsInstagram />}
-              />
-            </Stack>
+            <Logo />
+            <Crp/>
+            <SocialIcons />
           </Stack>
 
           <Stack flex="1" alignItems="center" spacing="1rem">
@@ -91,7 +64,11 @@ export default function () {
               {openingHours.map((it, index) => (
                 <ListItem key={index} display="flex" alignItems="center">
                   {it.closed ? (
-                    <ListIcon transform="scale(1.2)" as={AiFillCloseCircle} color="red.500" />
+                    <ListIcon
+                      transform="scale(1.2)"
+                      as={AiFillCloseCircle}
+                      color="red.500"
+                    />
                   ) : (
                     <ListIcon as={CheckCircleIcon} color="green.500" />
                   )}
@@ -125,6 +102,8 @@ export default function () {
             </Stack>
 
             <TextArea placeholder="Mensagem" />
+
+            <CustomButton h="4rem">Enviar</CustomButton>
           </Stack>
         </FormControl>
       </Flex>

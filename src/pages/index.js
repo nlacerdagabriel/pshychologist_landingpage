@@ -10,6 +10,8 @@ import Services from "@/sections/Services";
 import Reviews from "@/sections/Reviews";
 import { themeColors } from "@/theme/colors";
 import Contact from "@/sections/Contact";
+import Localization from "@/sections/Localization";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +31,10 @@ export default function Home() {
         <Services />
         <Reviews />
         <Contact />
+        <Localization/>
+        <Footer/>
       </main>
-      /
+      
     </ChakraProvider>
   );
 }
