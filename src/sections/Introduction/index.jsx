@@ -1,39 +1,38 @@
 import { themeColors } from "@/theme/colors";
 import { themeFontSize } from "@/theme/fontSize";
-import {  Container, Flex, Heading, Text } from "@chakra-ui/react";
+import {  Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import BusinessWoman from "../../../public/business-woman.png";
 import CustomButton from "@/components/CustomButton";
 
 export default function Introduction() {
   return (
-    <Container display="flex" alignItems="flex-end" pt="100px" maxW="100%" bg={themeColors.primary_light}>
+    <Container minH={{none: "50vh"}} display="flex" alignItems={{none: "center", ssm: "flex-end"}} pt="100px" maxW="100%" bg={themeColors.primary_light}>
       <Flex
-        justifyContent="space-between"
+        justifyContent={{none: "center", ssm: "space-between"}}
         alignItems="center"
         maxW="container.xl"
         w="100%"
         m="0 auto"
       >
-        <Container maxW="615px" m="0">
+        <Container maxW={{none: "400px", ssm: "615px"}} m="0">
           <Text
-            fontSize={themeFontSize.m}
+            fontSize={{none: "0.9rem", md: themeFontSize.m}}
             color={themeColors.secondary}
             fontWeight="bold"
-            mb="1rem"
           >
             Isso é cuidados mentais
           </Text>
           <Heading
             mb="1.5rem"
             color={themeColors.primary}
-            fontSize={themeFontSize.xxl}
-            lineHeight="4rem"
+            fontSize={{none: "3rem", md: themeFontSize.xxl}}
+            lineHeight={{none: "3rem", md: "4rem"}}
           >
             Como você está se sentindo hoje?
           </Heading>
           <Text
-            fontSize={themeFontSize.l}
+            fontSize={{none: "1.1rem", md: themeFontSize.l}}
             mb="1rem"
             lineHeight={themeFontSize.l}
           >
@@ -43,7 +42,9 @@ export default function Introduction() {
           <CustomButton>Marcar horário</CustomButton>
         </Container>
 
+        <Box display={{none: "none", ssm: "inherit"}}>
         <Image src={BusinessWoman} />
+        </Box>
       </Flex>
     </Container>
   );

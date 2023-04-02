@@ -6,8 +6,17 @@ import { badgeTheme } from "./variants/badge";
 import { darken, rgba } from "polished";
 
 
-
 export const theme = extendTheme({
+  breakpoints : {
+    none: "0em",
+    sm: '30em', // 480px
+    ssm: "38em", // 620px
+    md: '48em', // 768px
+    lg: '62em', // 992px
+    llg: '70em', // 1124px
+    xl: '80em', // 1280px
+    '2xl': '96em', // 1536px
+  },
   colors: {
     themeColors,
     dsColorScheme: {

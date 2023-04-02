@@ -37,7 +37,7 @@ export default function () {
       maxW="container.xl"
     >
       <SectionTitle>Contato</SectionTitle>
-      <Flex w="100%">
+      <Flex flexDirection={{none: "column", llg: "row"}} w="100%">
         <Flex
           p="2rem"
           mr="1rem"
@@ -48,15 +48,17 @@ export default function () {
           border={`1px solid ${themeColors.secondary}`}
           boxShadow={`0 0 0 1px ${themeColors.secondary}`}
           flex="1"
-          justifyContent="space-between"
+          justifyContent={{md: "space-evenly", llg: "space-between"}}
+          mb={{none: "2rem", llg: "0"}}
+          direction={{none: "column", ssm: "row"}}
         >
-          <Stack mr="2rem" spacing="2rem">
+          <Stack mb={{none: "2rem", ssm: "0"}} mr={{none: "0", ssm: "2rem"}} spacing="2rem">
             <Logo />
             <Crp/>
             <SocialIcons />
           </Stack>
 
-          <Stack flex="1" alignItems="center" spacing="1rem">
+          <Stack maxW={{sm: "450px", llg: "inherit"}} flex="1" alignItems="center" spacing="1rem">
             <Heading fontSize={themeFontSize.l} as="h3">
               Horários de atendimento:
             </Heading>
@@ -91,12 +93,12 @@ export default function () {
         </Flex>
         <FormControl flex="1">
           <Stack spacing="1rem">
-            <Stack direction="row">
+            <Stack spacing={{none: "1rem", sm: "0 1rem"}} direction={{none: "column", sm: "row"}}>
               <Input placeholder="Nome" />
               <Input placeholder="E-mail" />
             </Stack>
 
-            <Stack direction="row">
+            <Stack spacing={{none: "1rem", sm: "0 1rem"}} direction={{none: "column", sm: "row"}}>
               <Input placeholder="Telefone" />
               <Input placeholder="Assunto" />
             </Stack>

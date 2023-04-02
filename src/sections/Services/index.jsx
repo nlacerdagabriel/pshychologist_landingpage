@@ -14,7 +14,7 @@ export default function Services() {
       m="0 auto"
     >
       <SectionTitle>Serviços</SectionTitle>
-      <SimpleGrid columns={3} spacingY="4rem">
+      <SimpleGrid columns={{sm: 1, md: 2, lg: 3}} spacingY="4rem">
         {services.map((it, index) => (
           <Service key={index} title={it.title} description={it.description} />
         ))}
