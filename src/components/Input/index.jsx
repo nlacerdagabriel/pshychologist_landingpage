@@ -13,7 +13,7 @@ export default function (props, { placeholder }) {
 
   return (
     <Input
-    height="3rem"
+    height={{none: "4rem", md: "3rem"}}
       _focusVisible={focusVisibleStyle}
       backgroundColor={themeColors.primary_light}
       placeholder={placeholder}

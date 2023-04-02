@@ -105,7 +105,7 @@ export default function () {
 
             <TextArea placeholder="Mensagem" />
 
-            <CustomButton h="4rem">Enviar</CustomButton>
+            <CustomButton height={{none: "5rem", md: "4rem"}}>Enviar</CustomButton>
           </Stack>
         </FormControl>
       </Flex>

@@ -66,16 +66,8 @@ a {
   background-color: #d07ea7 !important;
 }
 
-
-@media(max-width: 620px){
-  .swiper{
-   padding-right: 0 !important;
-   padding-left: 0 !important;
-   padding-bottom: 4rem !important;
+@media (max-width: 620px) {
+  .swiper {
+    padding-bottom: 4rem !important;
   }
-
-  .swiper-button-next,
-.swiper-button-prev{
-  display: none !important;
-}
 }
