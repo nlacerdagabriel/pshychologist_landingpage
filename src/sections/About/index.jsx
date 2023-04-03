@@ -15,8 +15,16 @@ import { CheckCircleIcon } from "@chakra-ui/icons";
 import { themeColors } from "@/theme/colors";
 import SectionTitle from "../../components/SectionTitle";
 import Section from "../../components/Section";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function About() {
+  const refImage = useRef(null);
+  const refText = useRef(null);
+  const isInViewImage = useInView(refImage, { once: true, amount: 0.5});
+  const isInViewText = useInView(refText, { once: true, amount: 0.5});
+
+
   return (
     <Section
       id="sobre"
@@ -27,8 +35,18 @@ export default function About() {
       direction={{ none: "column", md: "row" }}
     >
 
-        <Image  src={PersonalPhoto} />
-      <Container mt={{none: "2rem", md: "0"}} maxW="545px">
+        <Image   style={{
+            transform: isInViewImage ? "none" : "translateX(-200px)",
+            opacity: isInViewImage ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          ref={refImage} src={PersonalPhoto} />
+          
+      <Container ref={refText} style={{
+            transform: isInViewText ? "none" : "translateX(200px)",
+            opacity: isInViewText ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}  mt={{none: "2rem", md: "0"}} maxW="545px">
         <SectionTitle>Sobre mim</SectionTitle>
         <Text mb="1rem">
           There are many variations of passages of Lorem Ipsum available, but
