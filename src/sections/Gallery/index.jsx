@@ -4,7 +4,7 @@ import SectionTitle from "../../components/SectionTitle";
 import Section from "../../components/Section";
 import { SwiperSlide } from "swiper/react";
 import Swiper from "@/components/Swiper";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function Gallery() {
@@ -43,7 +43,7 @@ export default function Gallery() {
   {Array.from({ length: 3 }).map((_, index) => (
               <Box key={index}   ref={refColumnOne}
               style={{
-                transform: isInViewColumnOne? "none" : "translateX(200px)",
+                transform: isInViewColumnOne? "none" : "translateX(300px)",
                 opacity: isInViewColumnOne? 1 : 0,
                 transition: "300ms",
               }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
@@ -51,7 +51,7 @@ export default function Gallery() {
   {Array.from({ length: 3 }).map((_, index) => (
               <Box  key={index}  ref={refColumnTwo}
               style={{
-                transform: isInViewColumnTwo ? "none" : "translateX(200px)",
+                transform: isInViewColumnTwo ? "none" : "translateX(-300px)",
                 opacity: isInViewColumnTwo ? 1 : 0,
                 transition: "300ms",
               }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
@@ -59,7 +59,7 @@ export default function Gallery() {
   {Array.from({ length: 3 }).map((_, index) => (
               <Box  key={index}  ref={refColumnThree}
               style={{
-                transform: isInViewColumnThree ? "none" : "translateX(200px)",
+                transform: isInViewColumnThree ? "none" : "translateX(300px)",
                 opacity: isInViewColumnThree ? 1 : 0,
                 transition: "300ms",
               }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>

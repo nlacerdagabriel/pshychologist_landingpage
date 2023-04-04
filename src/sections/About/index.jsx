@@ -36,16 +36,16 @@ export default function About() {
     >
 
         <Image   style={{
-            transform: isInViewImage ? "none" : "translateX(-200px)",
+            transform: isInViewImage ? "none" : "translateX(-300px)",
             opacity: isInViewImage ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "300ms",
           }}
           ref={refImage} src={PersonalPhoto} />
           
       <Container ref={refText} style={{
-            transform: isInViewText ? "none" : "translateX(200px)",
+            transform: isInViewText ? "none" : "translateX(300px)",
             opacity: isInViewText ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "500ms",
           }}  mt={{none: "2rem", md: "0"}} maxW="545px">
         <SectionTitle>Sobre mim</SectionTitle>
         <Text mb="1rem">

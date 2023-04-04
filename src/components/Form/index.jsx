@@ -6,6 +6,8 @@ import { useForm, Controller } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { rules } from "@/utils/formRules";
 import useToastCustom from "@/hooks/useToastCustom";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Form() {
   const {
@@ -15,7 +17,11 @@ export default function Form() {
     reset,
     formState: { errors },
   } = useForm();
-  const [state, newToast] = useToastCustom()
+
+  const refForm = useRef(null);
+  const isInViewForm= useInView(refForm, { once: true, amount: 0.5});
+
+  const [_, newToast] = useToastCustom()
 
 
   const sendEmail = (data) => {
@@ -45,7 +51,12 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(sendEmail)} style={{ flex: "1" }}>
+    <form style={{
+      transform: isInViewForm ? "none" : "translateX(300px)",
+      opacity: isInViewForm ? 1 : 0,
+      transition: "300ms",
+      flex: "1"
+    }}  ref={refForm} onSubmit={handleSubmit(sendEmail)}>
       <Stack spacing="1rem">
         <Stack
           spacing={{ none: "1rem", sm: "0 1rem" }}

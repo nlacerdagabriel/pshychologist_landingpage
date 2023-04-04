@@ -16,10 +16,23 @@ import { themeFontSize } from "@/theme/fontSize";
 import { openingHours } from "@/data/opening-hours";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { AiFillCloseCircle } from "react-icons/Ai";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Infos() {
+
+  const refInfos = useRef(null);
+  const isInViewInfos= useInView(refInfos, { once: true, amount: 0});
+
   return (
     <Flex
+    ref={refInfos}
+
+    style={{
+      transform: isInViewInfos ? "none" : "translateX(-300px)",
+      opacity: isInViewInfos ? 1 : 0,
+      transition: "300ms",
+    }}
       p="2rem"
       mr="1rem"
       alignItems="center"

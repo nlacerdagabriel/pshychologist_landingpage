@@ -31,9 +31,9 @@ export default function Introduction() {
       >
         <Container
           style={{
-            transform: isInViewText ? "none" : "translateX(-200px)",
+            transform: isInViewText ? "none" : "translateX(-300px)",
             opacity: isInViewText ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "300ms",
           }}
           ref={refText}
           maxW={{ none: "400px", ssm: "615px" }}
@@ -66,9 +66,9 @@ export default function Introduction() {
         </Container>
 
         <Box  style={{
-            transform: isInViewImage ? "none" : "translateX(200px)",
+            transform: isInViewImage ? "none" : "translateX(300px)",
             opacity: isInViewImage ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "300ms",
           }}
           ref={refImage} display={{ none: "none", ssm: "inherit" }}>
           <Image src={BusinessWoman} />
