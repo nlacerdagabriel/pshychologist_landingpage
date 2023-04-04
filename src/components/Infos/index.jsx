@@ -22,7 +22,7 @@ import { useRef } from "react";
 export default function Infos() {
 
   const refInfos = useRef(null);
-  const isInViewInfos= useInView(refInfos, { once: true, amount: 0});
+  const isInViewInfos= useInView(refInfos, { once: true, amount: 0.5});
 
   return (
     <Flex
