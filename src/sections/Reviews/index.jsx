@@ -28,7 +28,7 @@ export default function Reviews() {
             transform: isInViewSwiper ? "none" : "translateY(100px)",
             opacity: isInViewSwiper ? 1 : 0,
             transition: "400ms",
-          }}  w="100%" maxW="100%" ref={refSwiper}>
+          }}   ref={refSwiper} w="100%" maxW="100%">
        <Swiper  maxW="inherit">
             {reviews.map((it) => (
               <SwiperSlide>
