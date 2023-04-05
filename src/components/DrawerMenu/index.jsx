@@ -24,7 +24,7 @@ export default function DrawerMenu({ btnRef, isOpen, onClose }) {
 
 
   return (
-    <>
+    <div style={{zIndex: '999999'}}>
       <Drawer
         isOpen={isOpen}
         placement="left"
@@ -71,6 +71,6 @@ export default function DrawerMenu({ btnRef, isOpen, onClose }) {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
+    </div>
   );
 }

@@ -45,7 +45,7 @@ export default function Header() {
           top: 0,
           left: 0,
           width: "100%",
-          zIndex: 9999,
+          zIndex: 999,
           transform: isInViewHeader ? "none" : "translateY(-80px)",
           opacity: isInViewHeader ? 1 : 0,
           transition: "400ms",
@@ -110,7 +110,7 @@ export default function Header() {
           top: 0,
           left: 0,
           width: "100%",
-          zIndex: 9999,
+          zIndex: 999,
           backgroundColor: "#FFF",
           boxShadow: " 0px -2px 30px -14px rgba(0,0,0,0.56)",
         }}
