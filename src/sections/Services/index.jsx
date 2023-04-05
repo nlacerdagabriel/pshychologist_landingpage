@@ -24,9 +24,9 @@ export default function Services() {
     >
       <SectionTitle>Serviços</SectionTitle>
       <SimpleGrid ref={refGrid} style={{
-            transform: isInViewGrid ? "none" : "translateY(300px)",
+            transform: isInViewGrid ? "none" : "translateY(100px)",
             opacity: isInViewGrid ? 1 : 0,
-            transition: "300ms",
+            transition: "400ms",
           }}  display={{none: "none", md: "grid"}} columns={{sm: 1, md: 2, lg: 3}} spacingY="4rem">
         {services.map((it, index) => (
           <Service key={index} title={it.title} description={it.description} />

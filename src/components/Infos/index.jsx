@@ -29,9 +29,9 @@ export default function Infos() {
     ref={refInfos}
 
     style={{
-      transform: isInViewInfos ? "none" : "translateX(-300px)",
+      transform: isInViewInfos ? "none" : "translateX(-100px)",
       opacity: isInViewInfos ? 1 : 0,
-      transition: "300ms",
+      transition: "400ms",
     }}
       p="2rem"
       mr="1rem"

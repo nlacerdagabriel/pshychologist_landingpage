@@ -21,8 +21,8 @@ import { useRef } from "react";
 export default function About() {
   const refImage = useRef(null);
   const refText = useRef(null);
-  const isInViewImage = useInView(refImage, { once: true, amount: 0.5});
-  const isInViewText = useInView(refText, { once: true, amount: 0.5});
+  const isInViewImage = useInView(refImage, { once: true, amount: 0.6});
+  const isInViewText = useInView(refText, { once: true, amount: 0.6});
 
 
   return (
@@ -36,16 +36,16 @@ export default function About() {
     >
 
         <Image   style={{
-            transform: isInViewImage ? "none" : "translateX(-300px)",
+            transform: isInViewImage ? "none" : "translateX(-100px)",
             opacity: isInViewImage ? 1 : 0,
-            transition: "300ms",
+            transition: "400ms",
           }}
           ref={refImage} src={PersonalPhoto} />
           
       <Container ref={refText} style={{
-            transform: isInViewText ? "none" : "translateX(300px)",
+            transform: isInViewText ? "none" : "translateX(100px)",
             opacity: isInViewText ? 1 : 0,
-            transition: "500ms",
+            transition: "400ms",
           }}  mt={{none: "2rem", md: "0"}} maxW="545px">
         <SectionTitle>Sobre mim</SectionTitle>
         <Text mb="1rem">

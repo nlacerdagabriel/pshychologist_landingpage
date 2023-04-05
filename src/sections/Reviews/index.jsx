@@ -25,9 +25,9 @@ export default function Reviews() {
       >
         <SectionTitle>Avaliações</SectionTitle>
        <Container style={{
-            transform: isInViewSwiper ? "none" : "translateY(300px)",
+            transform: isInViewSwiper ? "none" : "translateY(100px)",
             opacity: isInViewSwiper ? 1 : 0,
-            transition: "300ms",
+            transition: "400ms",
           }}  w="100%" maxW="100%" ref={refSwiper}>
        <Swiper  maxW="inherit">
             {reviews.map((it) => (

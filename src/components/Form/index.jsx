@@ -52,9 +52,9 @@ export default function Form() {
 
   return (
     <form style={{
-      transform: isInViewForm ? "none" : "translateX(300px)",
+      transform: isInViewForm ? "none" : "translateX(100px)",
       opacity: isInViewForm ? 1 : 0,
-      transition: "300ms",
+      transition: "400ms",
       flex: "1"
     }}  ref={refForm} onSubmit={handleSubmit(sendEmail)}>
       <Stack spacing="1rem">

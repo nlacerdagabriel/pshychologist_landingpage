@@ -43,25 +43,25 @@ export default function Gallery() {
   {Array.from({ length: 3 }).map((_, index) => (
               <Box key={index}   ref={refColumnOne}
               style={{
-                transform: isInViewColumnOne? "none" : "translateX(300px)",
+                transform: isInViewColumnOne? "none" : "translateX(100px)",
                 opacity: isInViewColumnOne? 1 : 0,
-                transition: "300ms",
+                transition: "400ms",
               }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
             ))}
   {Array.from({ length: 3 }).map((_, index) => (
               <Box  key={index}  ref={refColumnTwo}
               style={{
-                transform: isInViewColumnTwo ? "none" : "translateX(-300px)",
+                transform: isInViewColumnTwo ? "none" : "translateX(-100px)",
                 opacity: isInViewColumnTwo ? 1 : 0,
-                transition: "300ms",
+                transition: "400ms",
               }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
             ))}
   {Array.from({ length: 3 }).map((_, index) => (
               <Box  key={index}  ref={refColumnThree}
               style={{
-                transform: isInViewColumnThree ? "none" : "translateX(300px)",
+                transform: isInViewColumnThree ? "none" : "translateX(100px)",
                 opacity: isInViewColumnThree ? 1 : 0,
-                transition: "300ms",
+                transition: "400ms",
               }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
             ))}
           

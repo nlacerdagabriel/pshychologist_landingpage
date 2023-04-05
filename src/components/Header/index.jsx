@@ -48,7 +48,7 @@ export default function Header() {
           zIndex: 9999,
           transform: isInViewHeader ? "none" : "translateY(-80px)",
           opacity: isInViewHeader ? 1 : 0,
-          transition: "300ms",
+          transition: "400ms",
         }}
       
       >
