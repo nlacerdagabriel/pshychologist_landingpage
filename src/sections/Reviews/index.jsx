@@ -25,12 +25,13 @@ export default function Reviews({reviews}) {
         maxW="container.xl"
       >
         <SectionTitle>Avaliações</SectionTitle>
-       <Container style={{
+       <Container   style={{
             transform: isInViewSwiper ? "none" : "translateY(100px)",
             opacity: isInViewSwiper ? 1 : 0,
             transition: "400ms",
+            padding: "0"
           }}   ref={refSwiper} w="100%" maxW="100%">
-       <Swiper  maxW="inherit">
+       <Swiper maxW="inherit">
             {reviews.map((it) => (
               <SwiperSlide>
                 <Review name={it.title.rendered} description={it.excerpt.rendered} label={it.acf.label}/>

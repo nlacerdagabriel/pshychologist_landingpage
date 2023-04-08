@@ -34,7 +34,7 @@ export default function Infos() {
       transition: "400ms",
     }}
       p="2rem"
-      mr="1rem"
+      mr={{none: "0", llg: "1rem"}}
       alignItems="center"
       borderRadius="0.375rem;"
       color={themeColors.text}
