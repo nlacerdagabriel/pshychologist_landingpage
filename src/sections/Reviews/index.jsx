@@ -18,6 +18,7 @@ export default function Reviews({reviews}) {
   return (
     <Container id="avaliacoes" maxW="100%" bg={themeColors.primary_light}>
       <Section
+        p="96px 0rem"
         flexDirection="column"
         alignItems="center"
         m="0 auto"

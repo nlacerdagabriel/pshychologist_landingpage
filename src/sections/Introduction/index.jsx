@@ -15,10 +15,11 @@ export default function Introduction({introduction}) {
 
   return (
     <Container
-      minH={{ none: "50vh" }}
+      minH={{ none: "60vh" }}
       display="flex"
       alignItems={{ none: "center", ssm: "flex-end" }}
-      pt="100px"
+      pt="50px"
+      pb="10px"
       maxW="100%"
       bg={themeColors.primary_light}
     >
