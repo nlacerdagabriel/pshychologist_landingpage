@@ -34,8 +34,8 @@ export default function Gallery({ images }) {
 
   return (
     <Section
-      padding="96px 0"
-      justifyContent="center"
+    p={{ none: "48px 0", md: "96px 0" }}
+    justifyContent="center"
       overflow="hidden"
       id="galeria"
       maxW="100%"

@@ -19,8 +19,7 @@ export default function Services({ services }) {
       maxW="container.xl"
       alignItems="center"
       m="0 auto"
-      p="96px 0rem"
-
+      p={{ none: "48px 0", md: "96px 0" }}
     >
       <SectionTitle>Serviços</SectionTitle>
       <SimpleGrid
