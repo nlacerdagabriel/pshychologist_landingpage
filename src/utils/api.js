@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://dev-heloisa-aquino.pantheonsite.io/wp-json/wp/v2",
+  baseURL: process.env.WP_URL,
   auth: {
     username: process.env.WP_USERNAME,
     password: process.env.WP_PASSWORD,
