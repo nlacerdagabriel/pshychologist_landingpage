@@ -15,7 +15,7 @@ import SocialIcons from "../SocialIcons";
 import { themeFontSize } from "@/theme/fontSize";
 import { openingHours } from "@/data/opening-hours";
 import { CheckCircleIcon } from "@chakra-ui/icons";
-import { AiFillCloseCircle } from "react-icons/Ai";
+import { AiFillCloseCircle } from "react-icons/ai";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
