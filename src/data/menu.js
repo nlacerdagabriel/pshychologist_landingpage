@@ -1,4 +1,4 @@
-import { AiOutlineHome, AiOutlineStar, AiOutlinePhone } from "react-icons/Ai";
+import { AiOutlineHome, AiOutlineStar, AiOutlinePhone } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { TfiGallery } from "react-icons/tfi";
 import { MdMiscellaneousServices } from "react-icons/md";

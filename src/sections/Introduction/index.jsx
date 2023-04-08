@@ -7,7 +7,7 @@ import CustomButton from "@/components/CustomButton";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function Introduction() {
+export default function Introduction({introduction}) {
   const refImage = useRef(null);
   const isInViewImage = useInView(refImage, { once: true });
   const refText = useRef(null);
@@ -44,7 +44,7 @@ export default function Introduction() {
             color={themeColors.secondary}
             fontWeight="bold"
           >
-            Isso é cuidados mentais
+            {introduction.acf.label}
           </Text>
           <Heading
             mb="1.5rem"
@@ -52,15 +52,15 @@ export default function Introduction() {
             fontSize={{ none: "3rem", md: themeFontSize.xxl }}
             lineHeight={{ none: "3rem", md: "4rem" }}
           >
-            Como você está se sentindo hoje?
+            {introduction.acf.titulo}
           </Heading>
           <Text
             fontSize={{ none: "1.1rem", md: themeFontSize.l }}
             mb="1rem"
             lineHeight={themeFontSize.l}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in magna
-            vel purus cursus fermentum eget at.
+            {introduction.acf.descricao}
+
           </Text>
           <CustomButton>Marcar horário</CustomButton>
         </Container>

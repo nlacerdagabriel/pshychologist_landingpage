@@ -12,7 +12,7 @@ export default function Service({title, description}){
                 <Badge ml="1rem" variant="dsBadge" textTransform="inherit" fontSize={themeFontSize.base}>{title}</Badge>
             </Flex>
 
-            <Text>{description}</Text>
+            <div  dangerouslySetInnerHTML={{ __html: description }}/>
         </Container>
     )
 }

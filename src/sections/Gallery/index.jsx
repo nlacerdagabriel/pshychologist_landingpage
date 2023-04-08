@@ -5,21 +5,29 @@ import Section from "../../components/Section";
 import { SwiperSlide } from "swiper/react";
 import Swiper from "@/components/Swiper";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { getGalleryImages } from "@/utils/api";
 
-export default function Gallery() {
-  const refColumnOne = useRef(null);
-  const isInViewColumnOne = useInView(refColumnOne, {
+export default function Gallery({ images }) {
+
+  const groupsOfThree = [];
+
+  for (let i = 0; i < images.length; i += 3) {
+    groupsOfThree.push(images.slice(i, i + 3));
+  }
+
+  const refLineOne = useRef(null);
+  const isInViewLineOne = useInView(refLineOne, {
     once: true,
     amount: 0.4,
   });
-  const refColumnTwo = useRef(null);
-  const isInViewColumnTwo = useInView(refColumnTwo, {
+  const refLineTwo = useRef(null);
+  const isInViewLineTwo = useInView(refLineTwo, {
     once: true,
     amount: 0.4,
   });
-  const refColumnThree = useRef(null);
-  const isInViewColumnThree = useInView(refColumnThree, {
+  const refLineThree = useRef(null);
+  const isInViewLineThree = useInView(refLineThree, {
     once: true,
     amount: 0.4,
   });
@@ -40,40 +48,88 @@ export default function Gallery() {
           gap="2rem"
           columns={{ sm: 1, md: 2, lg: 3 }}
         >
-  {Array.from({ length: 3 }).map((_, index) => (
-              <Box key={index}   ref={refColumnOne}
+          {groupsOfThree[0].map((img, index) => (
+         <a href={img.acf.url} target="__blank">   <Box
+            border={`1px solid ${themeColors.primary}` }
+
+              key={index}
+              ref={refLineOne}
               style={{
-                transform: isInViewColumnOne? "none" : "translateX(100px)",
-                opacity: isInViewColumnOne? 1 : 0,
+                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                transform: isInViewLineOne ? "none" : "translateX(100px)",
+                opacity: isInViewLineOne ? 1 : 0,
                 transition: "400ms",
-              }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
-            ))}
-  {Array.from({ length: 3 }).map((_, index) => (
-              <Box  key={index}  ref={refColumnTwo}
+              }}
+              w="310px"
+              h="310px"
+              bg="#ccc"
+              borderRadius="0.5rem"
+            ></Box></a>
+          ))}
+          {groupsOfThree[1].map((img, index) => (
+           <a href={img.acf.url} target="__blank"> <Box
+            border={`1px solid ${themeColors.primary}` }
+
+              key={index}
+              ref={refLineTwo}
               style={{
-                transform: isInViewColumnTwo ? "none" : "translateX(-100px)",
-                opacity: isInViewColumnTwo ? 1 : 0,
+                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                transform: isInViewLineTwo ? "none" : "translateX(-100px)",
+                opacity: isInViewLineTwo ? 1 : 0,
                 transition: "400ms",
-              }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
-            ))}
-  {Array.from({ length: 3 }).map((_, index) => (
-              <Box  key={index}  ref={refColumnThree}
+              }}
+              w="310px"
+              h="310px"
+              bg="#ccc"
+              borderRadius="0.5rem"
+            ></Box></a>
+          ))}
+          {groupsOfThree[2].map((img, index) => (
+           <a href={img.acf.url} target="__blank"> <Box
+            border={`1px solid ${themeColors.primary}` }
+
+              key={index}
+              ref={refLineThree}
               style={{
-                transform: isInViewColumnThree ? "none" : "translateX(100px)",
-                opacity: isInViewColumnThree ? 1 : 0,
+                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                transform: isInViewLineThree ? "none" : "translateX(100px)",
+                opacity: isInViewLineThree ? 1 : 0,
                 transition: "400ms",
-              }} w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
-            ))}
-          
+              }}
+              w="310px"
+              h="310px"
+              bg="#ccc"
+              borderRadius="0.5rem"
+            ></Box></a>
+          ))}
         </SimpleGrid>
 
         <Swiper display={{ none: "flex", md: "none" }}>
-          {Array.from({ length: 9 }).map((_, index) => (
+          {images.map((img, index) => (
             <SwiperSlide
               key={index}
               style={{ display: "flex", justifyContent: "center" }}
             >
-              <Box w="310px" h="310px" bg="#ccc" borderRadius="0.5rem"></Box>
+           <a href={img.acf.url} target="__blank">
+           <Box
+            border={`1px solid ${themeColors.primary}` }
+              style={{
+                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              w="310px"
+              h="310px"
+              bg="#ccc"
+              borderRadius="0.5rem"
+            ></Box>
+           </a>
             </SwiperSlide>
           ))}
         </Swiper>

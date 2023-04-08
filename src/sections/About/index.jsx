@@ -18,11 +18,11 @@ import Section from "../../components/Section";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function About() {
+export default function About({about}) {
   const refImage = useRef(null);
   const refText = useRef(null);
-  const isInViewImage = useInView(refImage, { once: true, amount: 0.6});
-  const isInViewText = useInView(refText, { once: true, amount: 0.6});
+  const isInViewImage = useInView(refImage, { once: true, amount: 0.3});
+  const isInViewText = useInView(refText, { once: true, amount: 0.3});
 
 
   return (
@@ -48,18 +48,9 @@ export default function About() {
             transition: "400ms",
           }}  mt={{none: "2rem", md: "0"}} maxW="545px">
         <SectionTitle>Sobre mim</SectionTitle>
-        <Text mb="1rem">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which dont look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, Ipsum,
-        </Text>
-        <Text mb="2rem">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which dont look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, Ipsum,
-        </Text>
+        <div  dangerouslySetInnerHTML={{ __html: about.content.rendered }} style={{marginBottom: "2rem"}}/>
+
+       
 
         <Heading
           mb="1rem"

@@ -12,10 +12,12 @@ import { themeColors } from "@/theme/colors";
 import Contact from "@/sections/Contact";
 import Localization from "@/sections/Localization";
 import Footer from "@/components/Footer";
+import { getGalleryImages, getPage, getReviews, getServices } from "@/utils/api";
+import { reviews } from "@/data/reviews";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({images, services, reviews, introduction, about}) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
@@ -25,11 +27,11 @@ export default function Home() {
       </Head>
       <Header className={inter.className} />
       <main style={{ color: themeColors.text }} className={inter.className}>
-        <Introduction />
-        <About />
-        <Gallery />
-        <Services />
-        <Reviews />
+        <Introduction introduction={introduction}/>
+        <About about={about}/>
+        <Gallery images={images}/>
+        <Services services={services} />
+        <Reviews reviews={reviews}/>
         <Contact />
         <Localization/>
         <Footer/>
@@ -37,4 +39,22 @@ export default function Home() {
       
     </ChakraProvider>
   );
+}
+
+export async function getServerSideProps(context) {
+  const images = await getGalleryImages()
+  const services = await getServices()
+  const reviews = await getReviews()
+  const introduction = await getPage(120)
+  const about = await getPage(131)
+
+  return {
+    props: {
+      images,
+      services,
+      reviews,
+      introduction,
+      about
+    }
+  }
 }

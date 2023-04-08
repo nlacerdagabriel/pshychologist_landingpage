@@ -2,13 +2,13 @@ import SectionTitle from "@/components/SectionTitle";
 import Section from "@/components/Section";
 import Service from "@/components/Service";
 import { Container, SimpleGrid } from "@chakra-ui/react";
-import { services } from "@/data/services";
+// import { services } from "@/data/services";
 import Swiper from "@/components/Swiper";
 import { SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
-export default function Services() {
+export default function Services({ services }) {
   const refGrid = useRef(null);
   const isInViewGrid = useInView(refGrid, { once: true, amount: 0.1 });
 
@@ -33,22 +33,25 @@ export default function Services() {
         spacingY="4rem"
       >
         {services.map((it, index) => (
-          <Service key={index} title={it.title} description={it.description} />
+          <Service
+            key={index}
+            title={it.title.rendered}
+            description={it.excerpt.rendered}
+          />
         ))}
       </SimpleGrid>
 
-
-        <Swiper maxW="inherit" display={{ none: "flex", md: "none" }}>
-          {services.map((it, index) => (
-            <SwiperSlide>
-              <Service
-                key={index}
-                title={it.title}
-                description={it.description}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <Swiper maxW="inherit" display={{ none: "flex", md: "none" }}>
+        {services.map((it, index) => (
+          <SwiperSlide>
+            <Service
+              key={index}
+              title={it.title.rendered}
+              description={it.excerpt.rendered}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Section>
   );
 }
