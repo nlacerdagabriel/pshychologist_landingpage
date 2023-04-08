@@ -44,8 +44,8 @@ export default function DrawerMenu({ btnRef, isOpen, onClose }) {
           <DrawerBody>
             <List mt="2rem">
               {menu.map((it, index) => (
-                <>
-                  <Link onClick={handleClickMenuIcon}  href={it.link}>
+                <div key={index}>
+                  <Link  onClick={handleClickMenuIcon}  href={it.link}>
                     <ListItem
                     p="1rem 0"
                       key={index}
@@ -65,7 +65,7 @@ export default function DrawerMenu({ btnRef, isOpen, onClose }) {
                     </ListItem>
                   </Link>
                   <Divider />
-                </>
+                </div>
               ))}
             </List>
           </DrawerBody>

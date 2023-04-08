@@ -35,8 +35,8 @@ export default function Reviews({ reviews }) {
           maxW="100%"
         >
           <Swiper maxW="inherit">
-            {reviews.map((it) => (
-              <SwiperSlide>
+            {reviews.map((it, index) => (
+              <SwiperSlide key={index}>
                 <Review
                   name={it.title.rendered}
                   description={it.excerpt.rendered}

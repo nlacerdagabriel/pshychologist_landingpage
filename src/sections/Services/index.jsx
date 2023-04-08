@@ -44,9 +44,8 @@ export default function Services({ services }) {
 
       <Swiper maxW="inherit" display={{ none: "flex", md: "none" }}>
         {services.map((it, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index} >
             <Service
-              key={index}
               title={it.title.rendered}
               description={it.excerpt.rendered}
             />

@@ -1,15 +1,13 @@
 import { themeColors } from "@/theme/colors";
-import { Box, Container, Flex, SimpleGrid } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 import SectionTitle from "../../components/SectionTitle";
 import Section from "../../components/Section";
 import { SwiperSlide } from "swiper/react";
 import Swiper from "@/components/Swiper";
 import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { getGalleryImages } from "@/utils/api";
+import { useRef } from "react";
 
 export default function Gallery({ images }) {
-
   const groupsOfThree = [];
 
   for (let i = 0; i < images.length; i += 3) {
@@ -34,8 +32,8 @@ export default function Gallery({ images }) {
 
   return (
     <Section
-    p={{ none: "48px 0", md: "96px 0" }}
-    justifyContent="center"
+      p={{ none: "48px 0", md: "96px 0" }}
+      justifyContent="center"
       overflow="hidden"
       id="galeria"
       maxW="100%"
@@ -49,64 +47,70 @@ export default function Gallery({ images }) {
           columns={{ sm: 1, md: 2, lg: 3 }}
         >
           {groupsOfThree[0].map((img, index) => (
-         <a href={img.acf.url} target="__blank">   <Box
-            border={`1px solid ${themeColors.primary}` }
-
-              key={index}
-              ref={refLineOne}
-              style={{
-                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                transform: isInViewLineOne ? "none" : "translateX(100px)",
-                opacity: isInViewLineOne ? 1 : 0,
-                transition: "400ms",
-              }}
-              w="310px"
-              h="310px"
-              bg="#ccc"
-              borderRadius="0.5rem"
-            ></Box></a>
+            <a href={img.acf.url} target="__blank">
+              {" "}
+              <Box
+                border={`1px solid ${themeColors.primary}`}
+                key={index}
+                ref={refLineOne}
+                style={{
+                  backgroundImage: `url(${img._embedded["wp:featuredmedia"][0].source_url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  transform: isInViewLineOne ? "none" : "translateX(100px)",
+                  opacity: isInViewLineOne ? 1 : 0,
+                  transition: "400ms",
+                }}
+                w="310px"
+                h="310px"
+                bg="#ccc"
+                borderRadius="0.5rem"
+              ></Box>
+            </a>
           ))}
           {groupsOfThree[1].map((img, index) => (
-           <a href={img.acf.url} target="__blank"> <Box
-            border={`1px solid ${themeColors.primary}` }
-
-              key={index}
-              ref={refLineTwo}
-              style={{
-                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                transform: isInViewLineTwo ? "none" : "translateX(-100px)",
-                opacity: isInViewLineTwo ? 1 : 0,
-                transition: "400ms",
-              }}
-              w="310px"
-              h="310px"
-              bg="#ccc"
-              borderRadius="0.5rem"
-            ></Box></a>
+            <a href={img.acf.url} target="__blank">
+              {" "}
+              <Box
+                border={`1px solid ${themeColors.primary}`}
+                key={index}
+                ref={refLineTwo}
+                style={{
+                  backgroundImage: `url(${img._embedded["wp:featuredmedia"][0].source_url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  transform: isInViewLineTwo ? "none" : "translateX(-100px)",
+                  opacity: isInViewLineTwo ? 1 : 0,
+                  transition: "400ms",
+                }}
+                w="310px"
+                h="310px"
+                bg="#ccc"
+                borderRadius="0.5rem"
+              ></Box>
+            </a>
           ))}
           {groupsOfThree[2].map((img, index) => (
-           <a href={img.acf.url} target="__blank"> <Box
-            border={`1px solid ${themeColors.primary}` }
-
-              key={index}
-              ref={refLineThree}
-              style={{
-                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                transform: isInViewLineThree ? "none" : "translateX(100px)",
-                opacity: isInViewLineThree ? 1 : 0,
-                transition: "400ms",
-              }}
-              w="310px"
-              h="310px"
-              bg="#ccc"
-              borderRadius="0.5rem"
-            ></Box></a>
+            <a href={img.acf.url} target="__blank">
+              {" "}
+              <Box
+                border={`1px solid ${themeColors.primary}`}
+                key={index}
+                ref={refLineThree}
+                style={{
+                  backgroundImage: `url(${img._embedded["wp:featuredmedia"][0].source_url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  transform: isInViewLineThree ? "none" : "translateX(100px)",
+                  opacity: isInViewLineThree ? 1 : 0,
+                  transition: "400ms",
+                }}
+                w="310px"
+                h="310px"
+                bg="#ccc"
+                borderRadius="0.5rem"
+              ></Box>
+            </a>
           ))}
         </SimpleGrid>
 
@@ -116,20 +120,20 @@ export default function Gallery({ images }) {
               key={index}
               style={{ display: "flex", justifyContent: "center" }}
             >
-           <a href={img.acf.url} target="__blank">
-           <Box
-            border={`1px solid ${themeColors.primary}` }
-              style={{
-                backgroundImage: `url(${img._embedded['wp:featuredmedia'][0].source_url})` ,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              w="310px"
-              h="310px"
-              bg="#ccc"
-              borderRadius="0.5rem"
-            ></Box>
-           </a>
+              <a href={img.acf.url} target="__blank">
+                <Box
+                  border={`1px solid ${themeColors.primary}`}
+                  style={{
+                    backgroundImage: `url(${img._embedded["wp:featuredmedia"][0].source_url})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                  w="310px"
+                  h="310px"
+                  bg="#ccc"
+                  borderRadius="0.5rem"
+                ></Box>
+              </a>
             </SwiperSlide>
           ))}
         </Swiper>
