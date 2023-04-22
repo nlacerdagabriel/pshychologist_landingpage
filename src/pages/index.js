@@ -20,8 +20,8 @@ export default function Home({images, services, reviews, introduction, about}) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>Psicóloga Heloísa Aquino</title>
-        <meta name="description" content="Psicóloga Heloísa Aquino" />
+        <title>Psicóloga Larissa Souza</title>
+        <meta name="description" content="Psicóloga Larissa Souza" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header className={inter.className} />

@@ -2,7 +2,6 @@ import { Container } from "@chakra-ui/react";
 import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
 import Review from "@/components/Review";
-//import { reviews } from "@/data/reviews";
 import { themeColors } from "@/theme/colors";
 import Swiper from "@/components/Swiper";
 import { SwiperSlide } from "swiper/react";
