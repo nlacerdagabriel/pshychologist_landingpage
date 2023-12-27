@@ -1,9 +1,9 @@
 import { darken, rgba } from "polished";
 
 export const themeColors = {
-  primary: "#D07EA7",
-  secondary: darken(0.2, "#D07EA7"),
-  primary_light: rgba("#D07EA7", 0.05),
+  primary: "#8D8674",
+  secondary: darken(0.2, "#8D8674"),
+  primary_light: "#F0F0F0",
   text: "#5D5D5D",
   white: "#FFFFFF",
   success: "#0A4700",
